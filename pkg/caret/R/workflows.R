@@ -92,6 +92,7 @@ nominalTrainWorkflow <- function(x, y, wts, info, method, ppOpts, ctrl, lev, tes
         modelIndex <- resampleIndex[[iter]]
         holdoutIndex <- ctrl$indexOut[[iter]]
       } else {
+        print("Resample Data: All data")
         modelIndex <- 1:nrow(x)
         holdoutIndex <- modelIndex
       }

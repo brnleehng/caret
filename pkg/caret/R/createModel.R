@@ -11,9 +11,14 @@
 #' @export
 #' @keywords internal
 "createModel" <-function(x, y, wts, method, tuneValue, obsLevels, pp = NULL, last = FALSE, sampling = NULL, classProbs, ...) {
+  print("createModel Function In: ")
+  print("x: ")
+  print(x)
+  print("y: ")
+  print(y)
 
   ## To get of warnings "some row.names duplicated: " when resampling with replacement
-  if(is.data.frame(x) | is.matrix(x)) 
+  if(is.data.frame(x) | is.matrix(x))
     rownames(x) <- make.names(rownames(x), unique = TRUE)
 
   if(!is.null(sampling) && sampling$first) {
